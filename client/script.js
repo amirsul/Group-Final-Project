@@ -189,3 +189,8 @@ async function mainEvent() {
       */
 document.addEventListener('DOMContentLoaded', async () => mainEvent()); // the async keyword means we can make API requests
   
+// Make the HTTP request to the API
+
+fetch('https://data.princegeorgescountymd.gov/resource/7k64-tdwr.json')
+  .then((response) => response.json())
+  .then((data) => console.log(data));
