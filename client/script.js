@@ -4,6 +4,11 @@
   Hook this script to index.html
   by adding `<script src="script.js">` just before your closing `</body>` tag
 */
+// Make the HTTP request to the API
+
+fetch('https://data.princegeorgescountymd.gov/resource/7k64-tdwr.json')
+  .then(response => response.json())
+  .then(data => console.log(data))
 
 /*
   ## Utility Functions
@@ -188,9 +193,3 @@ async function mainEvent() {
         It runs first because the listener is set to when your HTML content has loaded
       */
 document.addEventListener('DOMContentLoaded', async () => mainEvent()); // the async keyword means we can make API requests
-  
-// Make the HTTP request to the API
-
-fetch('https://data.princegeorgescountymd.gov/resource/7k64-tdwr.json')
-  .then((response) => response.json())
-  .then((data) => console.log(data));
