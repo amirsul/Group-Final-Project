@@ -4,20 +4,43 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Libraries Near Me </title>
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.3/dist/leaflet.css"
+    integrity="sha256-kLaT2GOSpHechhsozzB+flnD+zUyjE2LlfWPgU04xyI="
+    crossorigin=""/>
     <link rel="stylesheet" href="style.css">
+    <script src="https://unpkg.com/leaflet@1.9.3/dist/leaflet.js"
+    integrity="sha256-WBkoXOwTeyKclOHuWtc+i2uENFpDZ9YPdf5Hf+D7ewM="
+    crossorigin=""></script>
 </head>
 <body>
-    <h1 <p style="text-align:center"> <B>Libraries Near Me </B></p> </body> <h1>
-            <h2>Enter A Location:
-                <input type="text" name="location" id="location">
-                 <button type="button">Search</button>
-            </h2> 
-            </div>
-            <h3 <p style="text-align:center"> <B>Libraries Around You</B></p> </body> <h3>
+    <div class= "wrapper">
+        <header class="header">
+            <h1>Libraries Near Me</h1>
+        </header>
+        <div class="container">
+            <div class= "left_section box">
+                <h3> Filter Locations</h3>
+                <form action="/api" class="box main_form">
+                    <div>
+                        <label for="resto">Enter A Location:</label>
+                        <input type="text" name="resto" id="resto">
+                    </div>
+                    <div class="lds-ellipsis"><div></div><div></div><div></div><div></div></div>
+                    <button type="submit" id="get-resto">Search</button>
+                </form>
+             </div>
+            <div class="right_section box">
+                <h3>Local Libraries Map</h3> 
+                <div id="map"></div>
+                <div class="box" id="restaurant_list">
+                    A list of local Libraries from an API
+                        </div>        
+                    </div>
+                </div>
             <script src="script.js"></script>
-            <img src="map.png" class="center">
-            <div class="footer">
-                <p>About...</p>
-              </div>
-  
-</body>
+            </div>
+         </body>
+<footer class="footerbox">
+    About: 
+</footer>
+</html>
