@@ -39,7 +39,7 @@ function injectHTML(list) {
   target.appendChild(listEl);
   list.forEach((item) => {
     const el = document.createElement("li");
-    el.innerText = `Library Name:${item.branch_name}:${item.location_1.human_address.split(",")[0]}}`;
+    el.innerText = `Library Name:${item.branch_name} Address:${JSON.parse(item.location_1.human_address).address.split(",")[0]}`;
     listEl.appendChild(el);
   });
   /*
