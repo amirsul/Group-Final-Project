@@ -39,7 +39,7 @@ function injectHTML(list) {
   target.appendChild(listEl);
   list.forEach((item) => {
     const el = document.createElement('li');
-    el.innerText = `${item.location_1}${item.branch_name}`;
+    el.innerText = `${item.branch_name} ${item.location_1.address}`;
     listEl.appendChild(el);
   });
   /*
@@ -87,12 +87,12 @@ function processRestaurants(list) {
 }
 
 function filterList(array, filterInputValue) {
-  return list.filter((item) => {
-    if (!item.name) { return; }
-    const lowerCaseName = item.name.toLowerCase();
+  return array.filter((item) => {
+    if (!item.branch_name) { return; }
+    const lowerCaseName = item.branch_name.toLowerCase();
     const lowerCaseQuery = filterInputValue.toLowerCase();
     return lowerCaseName.includes(lowerCaseQuery);
-  })
+  });
 }
 
 function initMap() {
