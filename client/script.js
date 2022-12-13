@@ -39,7 +39,7 @@ function injectHTML(list) {
   target.appendChild(listEl);
   list.forEach((item) => {
     const el = document.createElement("li");
-    el.innerText = ` Library Name: ${item.branch_name}${item.location_1["human_address"]}`;
+    el.innerText = `Library Name:${item.branch_name}:${item.location_1.human_address.split(",")[0]}}`;
     listEl.appendChild(el);
   });
   /*
@@ -109,7 +109,8 @@ function initMap() {
 }
 
 function markerPlace(array, map) {
-  // const marker = L.marker([51.5, -0.09]).addTo(map);
+  const marker = L.marker([coordinates]);
+  marker.addTo(map);
   map.eachLayer((layer) => {
     if (layer instanceof L.Marker) {
       layer.remove();
@@ -117,10 +118,10 @@ function markerPlace(array, map) {
   });
 
   array.forEach((item, index) => {
-    const { coordinates } = item.geocoded_column_1;
-    L.marker([coordinates[1], coordinates[0]]).addTo(map);
+    const { coordinates } = item.location_1;
+    L.marker([coordinates[latitude], coordinates[longitude]]).addTo(map);
     if (index === 0) {
-      map.setView([coordinates[1], coordinates[0]], 10);
+      map.setView([coordinates[latitude], coordinates[longitude]], 10);
     }
   });
 }
