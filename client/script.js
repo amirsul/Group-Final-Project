@@ -30,6 +30,7 @@ function getRandomIntInclusive(min, max) {
 }
 
 function injectHTML(list) {
+  // eslint-disable-next-line no-console
   console.log('fired injectHTML');
   const target = document.querySelector('#restaurant_list');
   target.innerHTML = '';
@@ -38,7 +39,7 @@ function injectHTML(list) {
   target.appendChild(listEl);
   list.forEach((item) => {
     const el = document.createElement('li');
-    el.innerText = item.name;
+    el.innerText = `${item.location_1}${item.branch_name}`;
     listEl.appendChild(el);
   });
   /*
