@@ -142,7 +142,6 @@ async function mainEvent() {
       */
   const pageMap= initMap();
   // the async keyword means we can make API requests
-<<<<<<< HEAD
   const form = document.querySelector(".main_form"); // get your main form so you can do JS with it
   const submit = document.querySelector("#get-resto"); // get a reference to your submit button
   const loadAnimation = document.querySelector(".lds-ellipsis");
@@ -156,19 +155,6 @@ async function mainEvent() {
   const results = await fetch(
     "https://data.princegeorgescountymd.gov/resource/7k64-tdwr.json"
   );
-=======
-  const form = document.querySelector('.main_form'); // get your main form so you can do JS with it
-  const submit = document.querySelector('#get-resto'); // get a reference to your submit button
-  const loadAnimation = document.querySelector('.lds-ellipsis');
-  submit.style.display = 'none'; // let your submit button disappear
-
-  /*
-        Let's get some data from the API - it will take a second or two to load
-        This next line goes to the request for 'GET' in the file at /server/routes/foodServiceRoutes.js
-        It's at about line 27 - go have a look and see what we're retrieving and sending back.
-       */
-  const results = await fetch('https://data.princegeorgescountymd.gov/resource/7k64-tdwr.json');
->>>>>>> dde4d86efe5184697e9b72e74a5d620257c4045b
   const arrayFromJson = await results.json(); // here is where we get the data from our request as JSON
   /*
         Below this comment, we log out a table of all the results using "dot notation"
