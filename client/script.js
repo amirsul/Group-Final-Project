@@ -56,7 +56,7 @@ function injectHTML(list) {
         - using a .forEach method, inject a list element into your index.html for every element in the list
         - Display the name of that restaurant and what category of food it is
     */
-}
+
 
 function processRestaurants(list) {
   console.log("fired restaurants list");
