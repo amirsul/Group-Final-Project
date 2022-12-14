@@ -116,11 +116,9 @@ function markerPlace(array, map) {
   array.forEach((item, index) => {
     const {latitude} = item.location_1;
     const {longitude} = item.location_1;
-    console.log(latitude,longitude);
+    console.log(latitude, longitude);
     L.marker([Number(latitude), Number(longitude)]).addTo(map);
-    if (index === 0) {
-      map.setView([Number(latitude), Number(longitude)], 10);
-    }
+    if (index === 0) { map.setView([Number(latitude), Number(longitude)], 10); }
   });
 }
 
