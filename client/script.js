@@ -86,10 +86,10 @@ function processRestaurants(list) {
       */
 }
 
-function filterList(list, filterInputValue) {
-  return list.filter((item) => {
-    if (!item.name) { return; }
-    const lowerCaseName = item.name.toLowerCase();
+function filterList(array, filterInputValue) {
+  return array.filter((item) => {
+    if (!item.branch_name) { return; }
+    const lowerCaseName = item.branch_name.toLowerCase();
     const lowerCaseQuery = filterInputValue.toLowerCase();
     return lowerCaseName.includes(lowerCaseQuery);
   });
